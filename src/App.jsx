@@ -22,13 +22,33 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import {Navigation} from "./navigation";
+import {useEffect} from "react";
+import {createStore, get, set} from "./data/ionicStorage";
+import {agent} from "./api";
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
+const App = () => {
+    useEffect(() => {
+
+        const setupStore = async () => {
+
+            await createStore("TiffsDB");
+            const exists = await get("pokemon");
+
+            if (!exists) {
+                agent.pokemon.list(2000)
+                    .then((response) => {
+                        set("pokemon", response.results);
+                    });
+            }
+        }
+
+        setupStore();
+    }, []);
+  return <IonApp>
     <Navigation />
   </IonApp>
-);
+};
 
 export default App;

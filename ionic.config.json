@@ -1,7 +1,15 @@
 {
   "name": "PokePlay",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 8117,
+      "productKey": "key_2b477ba4323d4b1cac65baca8dc041bb",
+      "appId": "4ab8df0f",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
   },
   "type": "react"
 }

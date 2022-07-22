@@ -9,13 +9,15 @@ import * as PropTypes from "prop-types";
 export const pages = {
     home: {
         title: "Home",
+        route: "/",
         url: "/",
         iosIcon: homeOutline,
         mdIcon: homeOutline
     },
     poke: {
         title: "Poke",
-        url: "/poke/:id",
+        url: "/poke/",
+        route: "/poke/:name",
         isoIcon: logoOctocat,
         mdIcon: logoOctocat
     }
@@ -31,7 +33,7 @@ export const getPagesArray = () => {
 
 export const getPage = (pageUrl) => {
     let toSearch = getPagesArray();
-    return toSearch.find(x => x.url === pageUrl);
+    return toSearch.find(x => x.route === pageUrl);
 }
 
 function IonTabButton(props) {
@@ -48,10 +50,10 @@ export const Navigation = () => {
         <IonReactRouter>
             <IonTabs>
                 <IonRouterOutlet>
-                    <Route exact path={`${pages.home.url}`}>
+                    <Route exact path={`${pages.home.route}`}>
                         <Home />
                     </Route>
-                    <Route path={`${pages.poke.url}`}>
+                    <Route path={`${pages.poke.route}`}>
                         <Poke/>
                     </Route>
                 </IonRouterOutlet>
