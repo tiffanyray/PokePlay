@@ -77,4 +77,10 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('fetch', (event) => {
+    console.log("fetch listener")
+    if (event.request.method !== "GET") return;
+    
+})
+
 // Any other custom service worker logic can go here.

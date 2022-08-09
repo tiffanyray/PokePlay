@@ -33,7 +33,7 @@ export const Home = () => {
                 <IonGrid>
                     <IonRow>
                     {pokemon.length > 0 && pokemon.slice(page * pageSize, (page + 1) * pageSize).map((poke, index) => {
-                        return <IonCol size={3} key={index}><PokemonOverviewCard name={poke.name} /></IonCol>;
+                        return <IonCol size-xs={12} size-sm={12} size-md={4} size={3} key={index}><PokemonOverviewCard name={poke.name} /></IonCol>;
                     })}
                     </IonRow>
                 </IonGrid>

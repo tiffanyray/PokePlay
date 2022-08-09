@@ -25,6 +25,7 @@ import {Navigation} from "./navigation";
 import {useEffect} from "react";
 import {createStore, get, set} from "./data/ionicStorage";
 import {agent} from "./api";
+import {InstallPwa} from "./components/PwaPrompt/InstallPwa";
 
 setupIonicReact();
 
@@ -48,6 +49,7 @@ const App = () => {
     }, []);
   return <IonApp>
     <Navigation />
+      <InstallPwa/>
   </IonApp>
 };
 

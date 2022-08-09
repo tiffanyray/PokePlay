@@ -1,6 +1,6 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "PokePlay",
+  "name": "Poke Play for Ionic Framework",
   "icons": [
     {
       "src": "assets/icon/favicon.png",
@@ -17,5 +17,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Pokemon App for testing Ionic Framework"
 }
